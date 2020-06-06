@@ -27,8 +27,7 @@
               <EmptySpace pref="227" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="id_botaoCadastrarNovo" max="32767" attributes="0"/>
-                  <Component id="id_botaoListarTodos" max="32767" attributes="0"/>
-                  <Component id="id_botaoPesquisar" pref="271" max="32767" attributes="0"/>
+                  <Component id="id_botaoListarTodos" pref="271" max="32767" attributes="0"/>
                   <Component id="id_botaoDeletar" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
@@ -47,13 +46,11 @@
               <Component id="jLabel1" min="-2" pref="71" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="id_botaoCadastrarNovo" min="-2" pref="60" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Component id="id_botaoListarTodos" min="-2" pref="67" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="id_botaoPesquisar" min="-2" pref="60" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               <Component id="id_botaoDeletar" min="-2" pref="60" max="-2" attributes="0"/>
-              <EmptySpace pref="122" max="32767" attributes="0"/>
+              <EmptySpace pref="145" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -74,14 +71,6 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="id_botaoListarTodosMouseClicked"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="id_botaoPesquisar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Pesquisar livro cadastrado"/>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="id_botaoPesquisarMouseClicked"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="id_botaoDeletar">

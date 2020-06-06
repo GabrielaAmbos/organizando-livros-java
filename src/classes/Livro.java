@@ -31,6 +31,25 @@ public class Livro {
             this.serie = serie;
         }
     }
+    
+    public Livro(String titulo, int ano, String editora, String autor, int tem, String edicao, String serie) {
+        this.titulo = titulo;
+        this.ano = ano;
+        this.editora = editora;
+        this.autor = autor;
+        if(tem == 1) {
+            this.tem = true;
+        } else {
+            this.tem = false;
+        }
+        //this.tem = tem == 1;
+        this.edicao = edicao;
+        if(serie == null) {
+            this.serie = titulo;
+        } else {
+            this.serie = serie;
+        }
+    }
 
     public String getTitulo() {
         return titulo;
@@ -58,6 +77,14 @@ public class Livro {
 
     public String getSerie() {
         return serie;
+    }
+    
+    public int getTem() {
+        if(tem) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
     
 }

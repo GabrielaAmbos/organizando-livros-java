@@ -32,7 +32,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         id_botaoCadastrarNovo = new javax.swing.JButton();
         id_botaoListarTodos = new javax.swing.JButton();
-        id_botaoPesquisar = new javax.swing.JButton();
         id_botaoDeletar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -57,13 +56,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        id_botaoPesquisar.setText("Pesquisar livro cadastrado");
-        id_botaoPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                id_botaoPesquisarMouseClicked(evt);
-            }
-        });
-
         id_botaoDeletar.setText("Deletar livro");
 
         jLabel1.setFont(new java.awt.Font(".SF NS Text", 0, 20)); // NOI18N
@@ -78,8 +70,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(227, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(id_botaoCadastrarNovo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(id_botaoListarTodos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(id_botaoPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
+                    .addComponent(id_botaoListarTodos, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
                     .addComponent(id_botaoDeletar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(218, 218, 218))
             .addGroup(layout.createSequentialGroup()
@@ -94,13 +85,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(id_botaoCadastrarNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(46, 46, 46)
                 .addComponent(id_botaoListarTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(id_botaoPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(45, 45, 45)
                 .addComponent(id_botaoDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(145, Short.MAX_VALUE))
         );
 
         pack();
@@ -118,15 +107,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_id_botaoCadastrarNovoMouseClicked
 
     private void id_botaoListarTodosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_id_botaoListarTodosMouseClicked
-        String livros = RepositorioLivro.listaDeExemplares();
-        JOptionPane.showMessageDialog(rootPane, livros);
-    }//GEN-LAST:event_id_botaoListarTodosMouseClicked
-
-    private void id_botaoPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_id_botaoPesquisarMouseClicked
-        TelaPesquisar tela = new TelaPesquisar();
+        TelaListarLivros tela = new TelaListarLivros();
         tela.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_id_botaoPesquisarMouseClicked
+    }//GEN-LAST:event_id_botaoListarTodosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -167,7 +151,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton id_botaoCadastrarNovo;
     private javax.swing.JButton id_botaoDeletar;
     private javax.swing.JButton id_botaoListarTodos;
-    private javax.swing.JButton id_botaoPesquisar;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
