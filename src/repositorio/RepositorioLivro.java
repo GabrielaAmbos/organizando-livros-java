@@ -77,6 +77,7 @@ public  class RepositorioLivro {
            ResultSet rs = sql.executeQuery();
            while(rs.next()) {
               livro = new Livro(
+                      rs.getInt("id"),
                       rs.getString("titulo"),
                       rs.getInt("ano"),
                       rs.getString("editora"),
@@ -94,19 +95,20 @@ public  class RepositorioLivro {
         return livro;
     }
     
-    public static ArrayList<Livro> pesquisarLivros(String pesquisa){
+    public static ArrayList<Livro> pesquisarLivrosComprados(String pesquisa){
         ArrayList<Livro> livros = new ArrayList<Livro>();
         try{
-           String query = "SELECT * FROM livros WHERE "
+           String query = "SELECT * FROM livros WHERE ( "
                    + "UPPER(titulo) LIKE UPPER('%" + pesquisa + "%') OR "
                    + "UPPER(autor) LIKE UPPER('%" + pesquisa + "%') OR "
                    + "UPPER(editora) LIKE UPPER('%" + pesquisa + "%') OR "
-                   + "UPPER(serie) LIKE UPPER('%" + pesquisa + "%')";
+                   + "UPPER(serie) LIKE UPPER('%" + pesquisa + "%')) AND tem = '1'";
            conexao = DBConnection.openConnection();
            sql = conexao.prepareStatement(query);
            ResultSet rs = sql.executeQuery();
            while(rs.next()) {
               Livro livro = new Livro(
+                      rs.getInt("id"),
                       rs.getString("titulo"),
                       rs.getInt("ano"),
                       rs.getString("editora"),
@@ -124,5 +126,78 @@ public  class RepositorioLivro {
         }
         return livros;
     }
+    
+        public static ArrayList<Livro> pesquisarLivrosDesejados(String pesquisa){
+        ArrayList<Livro> livros = new ArrayList<Livro>();
+        try{
+           String query = "SELECT * FROM livros WHERE ( "
+                   + "UPPER(titulo) LIKE UPPER('%" + pesquisa + "%') OR "
+                   + "UPPER(autor) LIKE UPPER('%" + pesquisa + "%') OR "
+                   + "UPPER(editora) LIKE UPPER('%" + pesquisa + "%') OR "
+                   + "UPPER(serie) LIKE UPPER('%" + pesquisa + "%')) AND tem = '0'";
+           conexao = DBConnection.openConnection();
+           sql = conexao.prepareStatement(query);
+           ResultSet rs = sql.executeQuery();
+           while(rs.next()) {
+              Livro livro = new Livro(
+                      rs.getInt("id"),
+                      rs.getString("titulo"),
+                      rs.getInt("ano"),
+                      rs.getString("editora"),
+                      rs.getString("autor"),
+                      rs.getInt("tem"),
+                      rs.getString("edicao"),
+                      rs.getString("serie")
+              );
+              livros.add(livro);
+           }
+        } catch (Exception e) {
+            
+        } finally {
+            DBConnection.closeConnection(conexao);
+        }
+        return livros;
+    }
+    
+    public static boolean deletarLivro(Livro livro) {
+       boolean retorno;
+       try{
+           String query = "Delete from livros where id = '" + livro.getId() + "' ";
+           conexao = DBConnection.openConnection();
+           sql = conexao.prepareStatement(query);
+           sql.executeUpdate();
+           retorno = true;
+       } catch (Exception e) {
+           retorno = false;
+       } finally {
+           DBConnection.closeConnection(conexao);
+       }
+       return retorno;
+    }
+    
+    public static boolean atualizar(Livro livro) {
+       boolean retorno;
+       try{
+           String query = "UPDATE livros SET "
+                            + "titulo = '" + livro.getTitulo() + "', "
+                            + "ano = '" + livro.getAno() + "', "
+                            + "editora = '" + livro.getEditora() + "', "
+                            + "autor = '" + livro.getAutor() + "', "
+                            + "tem = '" + livro.getTem() + "', "
+                            + "edicao = '" + livro.getEdicao() + "', "
+                            + "serie = '" + livro.getSerie() + "' "
+                     + "WHERE id = '" + livro.getId() + "'";
+           conexao = DBConnection.openConnection();
+           sql = conexao.prepareStatement(query);
+           sql.executeUpdate();
+           retorno = true;
+       } catch (Exception e) {
+           retorno = false;
+       } finally {
+           DBConnection.closeConnection(conexao);
+       }
+       return retorno;
+    }
+    
     
 }

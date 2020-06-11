@@ -28,7 +28,7 @@
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="id_botaoCadastrarNovo" max="32767" attributes="0"/>
                   <Component id="id_botaoListarTodos" pref="271" max="32767" attributes="0"/>
-                  <Component id="id_botaoDeletar" max="32767" attributes="0"/>
+                  <Component id="id_botaoDesejados" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
           </Group>
@@ -49,7 +49,7 @@
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Component id="id_botaoListarTodos" min="-2" pref="67" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-              <Component id="id_botaoDeletar" min="-2" pref="60" max="-2" attributes="0"/>
+              <Component id="id_botaoDesejados" min="-2" pref="60" max="-2" attributes="0"/>
               <EmptySpace pref="145" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -67,16 +67,19 @@
     </Component>
     <Component class="javax.swing.JButton" name="id_botaoListarTodos">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Exibir livros cadastrados"/>
+        <Property name="text" type="java.lang.String" value="Exibir meus livros"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="id_botaoListarTodosMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="id_botaoDeletar">
+    <Component class="javax.swing.JButton" name="id_botaoDesejados">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Deletar livro"/>
+        <Property name="text" type="java.lang.String" value="Exibir lista de desejos"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="id_botaoDesejadosMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>

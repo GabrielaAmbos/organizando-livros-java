@@ -24,134 +24,84 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel3" min="-2" pref="68" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="id_tituloExibido" min="-2" pref="527" max="-2" attributes="0"/>
-                          <Component id="id_anoExibido" alignment="0" min="-2" pref="527" max="-2" attributes="0"/>
-                      </Group>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="id_tituloExibido" max="32767" attributes="0"/>
+                      <Component id="id_anoExibido" max="32767" attributes="0"/>
+                      <Component id="id_editoraExibida" pref="450" max="32767" attributes="0"/>
+                      <Component id="id_autorExibido" max="32767" attributes="0"/>
+                      <Component id="id_edicaoExibida" max="32767" attributes="0"/>
+                      <Component id="id_serieExibida" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" pref="68" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="id_editoraExibida" min="-2" pref="527" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel7" min="-2" pref="60" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="id_serieExibida" min="-2" pref="527" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="260" max="-2" attributes="0"/>
-                      <Component id="id_voltar" min="-2" pref="137" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel6" min="-2" pref="60" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="id_edicaoExibida" min="-2" pref="527" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" pref="60" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="id_autorExibido" min="-2" pref="527" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="id_voltar" min="-2" pref="99" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                      <Component id="bt_editar" min="-2" pref="104" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="bt_excluir" min="-2" pref="98" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="90" max="32767" attributes="0"/>
+              <EmptySpace pref="75" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel2" min="-2" pref="36" max="-2" attributes="0"/>
-                  <Component id="id_tituloExibido" min="-2" pref="30" max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Component id="id_tituloExibido" min="-2" pref="36" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel3" min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="id_anoExibido" min="-2" pref="31" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel4" alignment="1" min="-2" pref="38" max="-2" attributes="0"/>
-                  <Component id="id_editoraExibida" alignment="1" min="-2" pref="38" max="-2" attributes="0"/>
-              </Group>
+              <Component id="id_anoExibido" min="-2" pref="31" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel5" alignment="1" min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="id_autorExibido" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
-              </Group>
+              <Component id="id_editoraExibida" min="-2" pref="38" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel6" alignment="1" min="-2" pref="38" max="-2" attributes="0"/>
-                  <Component id="id_edicaoExibida" alignment="1" min="-2" pref="38" max="-2" attributes="0"/>
-              </Group>
+              <Component id="id_autorExibido" min="-2" pref="39" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel7" min="-2" pref="41" max="-2" attributes="0"/>
-                  <Component id="id_serieExibida" min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="id_edicaoExibida" min="-2" pref="38" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="id_serieExibida" min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="id_voltar" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="bt_editar" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="bt_excluir" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-              <Component id="id_voltar" min="-2" pref="44" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="T&#xed;tulo"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Ano"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Editora"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Autor"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Edi&#xe7;&#xe3;o"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="S&#xe9;rie"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="id_tituloExibido">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="T&#xed;tulo: "/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="id_anoExibido">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ano: "/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="id_editoraExibida">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Editora: "/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="id_autorExibido">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Autor:"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="id_edicaoExibida">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Edi&#xe7;&#xe3;o:"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="id_serieExibida">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Serie:"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="id_voltar">
       <Properties>
@@ -159,6 +109,23 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="id_voltarMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="id_voltarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="bt_editar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Editar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt_editarMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="bt_excluir">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Excluir"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt_excluirMouseClicked"/>
       </Events>
     </Component>
   </SubComponents>

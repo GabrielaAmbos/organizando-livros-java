@@ -10,6 +10,7 @@ package classes;
  * @author gabrielaambos
  */
 public class Livro {
+    private int id;
     private String titulo;
     private int ano;
     private String editora;
@@ -32,7 +33,8 @@ public class Livro {
         }
     }
     
-    public Livro(String titulo, int ano, String editora, String autor, int tem, String edicao, String serie) {
+    public Livro(int id, String titulo, int ano, String editora, String autor, int tem, String edicao, String serie) {
+        this.id = id;
         this.titulo = titulo;
         this.ano = ano;
         this.editora = editora;
@@ -49,6 +51,13 @@ public class Livro {
         } else {
             this.serie = serie;
         }
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public int getId() {
+        return id;
     }
 
     public String getTitulo() {

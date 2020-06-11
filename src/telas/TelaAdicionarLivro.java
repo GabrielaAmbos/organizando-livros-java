@@ -19,8 +19,13 @@ public class TelaAdicionarLivro extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
-    public TelaAdicionarLivro() {
+    private Livro livro;
+    public TelaAdicionarLivro(Livro livro) {
         initComponents();
+        this.livro = livro;
+        if(livro != null) {
+            recebeLivro();
+        }
     }
 
     /**
@@ -79,6 +84,7 @@ public class TelaAdicionarLivro extends javax.swing.JFrame {
         jLabel6.setText("Série");
 
         id_grupoTem.add(id_tem);
+        id_tem.setSelected(true);
         id_tem.setText("Tem na estante");
 
         id_grupoTem.add(id_quer);
@@ -174,8 +180,16 @@ public class TelaAdicionarLivro extends javax.swing.JFrame {
 
     private void id_botaoSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_id_botaoSalvarMouseClicked
         Livro livro = montaLivro();
-        RepositorioLivro.adicionar(livro);
-        JOptionPane.showMessageDialog(rootPane, "Livro adicionado com sucesso!");
+        if(this.livro == null) {
+            RepositorioLivro.adicionar(livro);
+            JOptionPane.showMessageDialog(rootPane, "Livro adicionado com sucesso!");
+        } else {
+            livro.setId(this.livro.getId());
+            RepositorioLivro.atualizar(livro);
+            JOptionPane.showMessageDialog(rootPane, "Livro atualizado com sucesso!");
+        }
+        
+        
         clearTela();
         voltarTela();
     }//GEN-LAST:event_id_botaoSalvarMouseClicked
@@ -187,6 +201,12 @@ public class TelaAdicionarLivro extends javax.swing.JFrame {
         } else {
             tem = false;
         }
+        String serie;
+        if(id_serie.getText().isBlank()) {
+            serie = id_titulo.getText();
+        } else {
+            serie = id_serie.getText();
+        }
         Livro livro = new Livro(
                 id_titulo.getText(),
                 Integer.parseInt(id_ano.getText()),
@@ -194,9 +214,23 @@ public class TelaAdicionarLivro extends javax.swing.JFrame {
                 id_autor.getText(),
                 tem,
                 id_edicao.getText(),
-                id_serie.getText()
+                serie
         );
         return livro;
+    }
+    
+    private void recebeLivro() {
+        id_titulo.setText(this.livro.getTitulo());
+        id_ano.setText(this.livro.getAno() + "");
+        id_editora.setText(this.livro.getEditora());
+        id_autor.setText(this.livro.getAutor());
+        id_edicao.setText(this.livro.getEdicao());
+        id_serie.setText(this.livro.getSerie());
+        if(this.livro.isTem()) {
+            id_tem.setSelected(true);
+        } else {
+            id_quer.setSelected(true);
+        }
     }
     
     private void clearTela() {
@@ -219,8 +253,10 @@ public class TelaAdicionarLivro extends javax.swing.JFrame {
     }//GEN-LAST:event_id_botaoVoltarMouseClicked
 
     private void voltarTela() {
-        TelaPrincipal tela = new TelaPrincipal();
-        tela.setVisible(true);
+        if(this.livro == null) {
+            TelaPrincipal tela = new TelaPrincipal();
+            tela.setVisible(true);
+        }
         this.setVisible(false);
     }
     /**
@@ -254,7 +290,7 @@ public class TelaAdicionarLivro extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaAdicionarLivro().setVisible(true);
+                new TelaAdicionarLivro(null).setVisible(true);
             }
         });
     }

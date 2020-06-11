@@ -32,7 +32,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         id_botaoCadastrarNovo = new javax.swing.JButton();
         id_botaoListarTodos = new javax.swing.JButton();
-        id_botaoDeletar = new javax.swing.JButton();
+        id_botaoDesejados = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,14 +49,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        id_botaoListarTodos.setText("Exibir livros cadastrados");
+        id_botaoListarTodos.setText("Exibir meus livros");
         id_botaoListarTodos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 id_botaoListarTodosMouseClicked(evt);
             }
         });
 
-        id_botaoDeletar.setText("Deletar livro");
+        id_botaoDesejados.setText("Exibir lista de desejos");
+        id_botaoDesejados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                id_botaoDesejadosMouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font(".SF NS Text", 0, 20)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -71,7 +76,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(id_botaoCadastrarNovo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(id_botaoListarTodos, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
-                    .addComponent(id_botaoDeletar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(id_botaoDesejados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(218, 218, 218))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -88,7 +93,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGap(46, 46, 46)
                 .addComponent(id_botaoListarTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
-                .addComponent(id_botaoDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(id_botaoDesejados, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(145, Short.MAX_VALUE))
         );
 
@@ -101,16 +106,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_id_botaoCadastrarNovoActionPerformed
 
     private void id_botaoCadastrarNovoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_id_botaoCadastrarNovoMouseClicked
-        TelaAdicionarLivro tela = new TelaAdicionarLivro();
+        TelaAdicionarLivro tela = new TelaAdicionarLivro(null);
         tela.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_id_botaoCadastrarNovoMouseClicked
 
     private void id_botaoListarTodosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_id_botaoListarTodosMouseClicked
-        TelaListarLivros tela = new TelaListarLivros();
+        TelaListarLivros tela = new TelaListarLivros(0);
         tela.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_id_botaoListarTodosMouseClicked
+
+    private void id_botaoDesejadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_id_botaoDesejadosMouseClicked
+        TelaListarLivros tela = new TelaListarLivros(1);
+        tela.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_id_botaoDesejadosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -149,7 +160,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton id_botaoCadastrarNovo;
-    private javax.swing.JButton id_botaoDeletar;
+    private javax.swing.JButton id_botaoDesejados;
     private javax.swing.JButton id_botaoListarTodos;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

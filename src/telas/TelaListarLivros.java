@@ -24,9 +24,16 @@ public class TelaListarLivros extends javax.swing.JFrame {
     /**
      * Creates new form TelaListarLivros
      */
-    public TelaListarLivros() {
+    int tipo;
+    
+    public TelaListarLivros(int tipo) { //0 - Comprados; 1 - Desejados
         initComponents();
-        livros = RepositorioLivro.pesquisarLivros("");
+        this.tipo = tipo;
+        if(tipo == 0) {
+            livros = RepositorioLivro.pesquisarLivrosComprados("");
+        } else {
+            livros = RepositorioLivro.pesquisarLivrosDesejados("");
+        }
         carregaTabela(livros);
     }
 
@@ -46,6 +53,13 @@ public class TelaListarLivros extends javax.swing.JFrame {
         id_tabelaLivros = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowFocusListener(new java.awt.event.WindowFocusListener() {
+            public void windowGainedFocus(java.awt.event.WindowEvent evt) {
+                formWindowGainedFocus(evt);
+            }
+            public void windowLostFocus(java.awt.event.WindowEvent evt) {
+            }
+        });
 
         id_botaoVoltar.setText("Voltar");
         id_botaoVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -141,13 +155,7 @@ public class TelaListarLivros extends javax.swing.JFrame {
     }//GEN-LAST:event_id_botaoVoltarMouseClicked
 
     private void id_botaoPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_id_botaoPesquisarMouseClicked
-        String pesquisa = id_campoPesquisar.getText();
-        livros = RepositorioLivro.pesquisarLivros(pesquisa);
-        if(livros.isEmpty()) {
-            JOptionPane.showMessageDialog(rootPane, "Opps...nenhum livro encontrado");        
-        } else {
-            carregaTabela(livros);
-        }
+        atualizaTabela(id_campoPesquisar.getText());
     }//GEN-LAST:event_id_botaoPesquisarMouseClicked
 
     private void id_tabelaLivrosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_id_tabelaLivrosMousePressed
@@ -159,6 +167,23 @@ public class TelaListarLivros extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_id_tabelaLivrosMousePressed
 
+    private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
+        atualizaTabela("");
+    }//GEN-LAST:event_formWindowGainedFocus
+
+    private void atualizaTabela(String pesquisa) {
+        if(this.tipo == 0) {
+            livros = RepositorioLivro.pesquisarLivrosComprados(pesquisa);
+        } else {
+            livros = RepositorioLivro.pesquisarLivrosDesejados(pesquisa);
+        }
+        if(livros.isEmpty() && !pesquisa.isBlank()) {
+            JOptionPane.showMessageDialog(rootPane, "Opps...nenhum livro encontrado");          
+        } else {
+            carregaTabela(livros);
+        }
+    }
+    
     private void carregaTabela(ArrayList<Livro> livros) {
         DefaultTableModel tabela = (DefaultTableModel) id_tabelaLivros.getModel();
         tabela.setRowCount(0);
@@ -203,7 +228,7 @@ public class TelaListarLivros extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaListarLivros().setVisible(true);
+                new TelaListarLivros(0).setVisible(true);
             }
         });
     }
